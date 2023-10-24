@@ -465,6 +465,9 @@ local servers = {
 -- Setup neovim lua configuration
 require('neodev').setup()
 
+-- Disable mouse to avoid messing up tmux
+vim.opt.mouse = ""
+
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
