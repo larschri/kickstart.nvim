@@ -652,7 +652,18 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+
+-- comment out defaults before some of these triggers by accident
+-- .local/share/nvim/lazy/friendly-snippets/snippets/go.json
+-- require('luasnip.loaders.from_vscode').lazy_load()
+--
+-- add some home made snippets
+-- debug notes: eval this file with ":luafile %" ..
+-- also "Lazy sync LuaSnip"
+-- todo: figure out what works when
+-- run :lua require("luasnip.loaders").edit_snippet_files()
+require('luasnip.loaders.from_lua').lazy_load({paths = "./luasnippets"})
+
 luasnip.config.setup {}
 
 cmp.setup {
