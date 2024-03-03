@@ -664,6 +664,11 @@ local luasnip = require 'luasnip'
 -- run :lua require("luasnip.loaders").edit_snippet_files()
 require('luasnip.loaders.from_lua').lazy_load({paths = "./luasnippets"})
 
+local function snipedit()
+  require("luasnip.loaders").edit_snippet_files()
+end
+vim.api.nvim_create_user_command('SnipEdit', snipedit, {})
+
 luasnip.config.setup {}
 
 cmp.setup {
