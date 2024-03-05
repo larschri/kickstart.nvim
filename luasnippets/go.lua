@@ -30,7 +30,6 @@ local fmt = require("luasnip.extras.fmt").fmt
 -- local k = require("luasnip.nodes.key_indexer").new_key
 
 return {
-
 	s("iferr", fmt([[
 		if err != nil {
 			return <> fmt.Errorf("<>: %w", err)
