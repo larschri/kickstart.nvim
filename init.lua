@@ -618,6 +618,9 @@ require('neodev').setup()
 -- Disable mouse to avoid messing up tmux
 vim.opt.mouse = ""
 
+-- Use local shada file (marks, history, etc)
+vim.opt.shadafile = ".shada"
+
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
